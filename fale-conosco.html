@@ -1,47 +1,146 @@
-Google Glass
-A revolução do Google está chegando
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tudo sobre o Google Glass</title>
+    
+   
+    <link rel="stylesheet" href="./_css/estilo.css"/> <!--Link para o "estilo.CSS-->
+    <link rel="stylesheet" href="./_css/form.css"/>
+    <script src="./_javascript/funcoes.js"></script>
 
-[AQUI ENTRA UMA FOTO]
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
 
-Menu Principal
-- Home
-- Especificações
-- Fotos
-- Multimídia
-- Fale conosco
+</head>
+    
+    
+<body><!--HTML-->
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
+<div id="interface">
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
+    <header id="cabecalho"> <!--Area de Cabeçalho-->
+    
+    <hgroup> <!--Grupo de titulos-->
+    <h1>Google Glass</h1>
+    <h2>A revolução do Google está chegando</h2>
+    </hgroup>      
 
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
+    <img id="icone" src="./_imagens/contatos.png"/>   
+   
+    <nav id="menu">
+    <h1>Menu Principal</h1>
+    <ul type="disc">
+        <li onmouseover="mudaFoto('./_imagens/home.png')" onmouseout="mudaFoto('./_imagens/contato.png')"><a href="./index.html">Home </a></li> <!--a letra significa link usando o href para colocar o link ou o caminho, a tag "li" siognifica listas-->
+        <li onmouseover="mudaFoto('./_imagens/especificacoes.png')" onmouseout="mudaFoto('./_imagens/contato.png')"><a href="./specs.html">Especificações </a></li>       
+        <li onmouseover="mudaFoto('./_imagens/fotos.png')" onmouseout="mudaFoto('./_imagens/contato.png')"><a href="./fotos.html">Fotos </a></li>        
+        <li onmouseover="mudaFoto('./_imagens/multimidia.png')" onmouseout="mudaFoto('./_imagens/contato.png')"><a href="./multimidia.html">Multimídia </a></li>       
+        <li onmouseover="mudaFoto('./_imagens/contato.png')" onmouseout="mudaFoto('./_imagens/contato.png')"><a href="./fale-conosco.html">Fale conosco </a></li>
+    </ul>
+    </nav>
+    </header> <!--Fim do Cabeçalho-->
 
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
+<br id="corpo-full">
 
 
-[BOTÃO ENVIAR]
+<article id="noticia-principal">
+    <header id="cabecalho-artigo">
+        <hgroup>
+        <h3>Fale Conosco > Contato </h3>
+        <h1>Formulário de Contato </h1>
+        <h2>por Marlon Miranda </h2>
+        <h3 class="direita">Atualizado em 23/Dezembro/2019 </h3>
+        </hgroup>
+    </header>  
 
-Copyright 2013 - by Gustavo Guanabara
-Facebook | Twitter
+    <form method="post" id="fContato" action="mailto:o.y.mi@hotmail.com" oninput="calc_total();" >
+        <fieldset id="usuario"><legend>Identificação do Usuário</legend>
+          <p><label for="cNome">Nome: </label>
+          <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+          <p><label for="cSenha">Senha: </label>
+          <input title="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos"/></p>
+          <p><label for="cMail">E-mail: </label>
+          <input type="email" name="tMail" id="cMail" size="20" maxlength="40"/></p>
+
+          <fieldset id="sexo"><legend>Sexo</legend>
+            <input type="radio" name="tSexo" id="cMasc" checked/> <label for="cMasc">Masculino</label></br>
+            <input type="radio" name="tSexo" id="cFem"/> <label for="cFem">Feminino</label>
+        </fieldset>
+        <p>Data de Nascimento:<input type="date" name="tNasc" id="cNasc"/></p>
+      </fieldset> 
+    
+    
+    </br>
+        <fieldset id="endereco"><legend>Endereço do Usuário</legend>
+            <p><label for="cRua">Logradouro: </label>
+            <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, Trav..."/></p>
+    
+            <p><label for="cNum">Número: </label>
+            <input type="number" name="tNum" id="cNum" min="0" max="99999"/></p>
+    
+        <p><label for="cEst">Estado: </label>
+        <select name="tEst" id="cEst">
+            <optgroup label="Região Sudeste">
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="SP">São Paulo</option>
+                <option value="MG">Minas Gerais</option>
+            </optgroup>
+
+            <optgroup label="Região Norte">
+                <option value="PA" selected>Pará</option>
+                <option value="MA">Manaus</option>
+                <option value="AM">Amapá</option>
+            </optgroup>
+    
+        </select> </p>
+        <p><label for="cCid">Cidade: </label>
+        <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua cidade"list="cidades"/></p>
+        <datalist id="cidades">
+            <option value="Belém"></option>
+            <option value="Igarapé-Miri"></option>
+            <option value="Barcarena"></option>
+            <option value="Moju"></option>
+        </datalist>
+    </fieldset>
+
+
+</br>
+<fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+    <p><label for="cUrg">Grau de Urgência: </label>
+    Min <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/> Max </p>
+    <p><label for="cMsg">Mensagem: </label>
+    <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+</fieldset>
+
+</br>
+<fieldset id="pedido"><legend>Quero um Google Glass</legend>
+    <p><input type="checkbox" name="tPed" id="cPed" checked/>
+    <label for="cPed">Gostaria de adquirir um Google Glass quando disponível </label></p>
+    <p><label for="cCor">Cor: </label>
+    <input type="color" name="tCor" id="cCor" value="#0000FF"/></p>
+    <p><label for="cQtd">Quantidade: </label>
+    <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/></p>
+    <p><label for="cTot">Preço Total: R$ </label>
+    <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly/></p>
+</fieldset>
+
+<input type="image" name="tEnviar" src="./_imagens/botao-enviar.png"/>
+
+</form>
+
+</article>
+
+<section>
+<footer id="rodape"> <!--Inicio do rodapé da página-->
+    <p>Copyright &copy; 2019 - by Marlon Miranda</br> 
+        <a href="https://www.facebook.com/" target="_blank">Facebook</a> | 
+        <a href="https://twitter.com/login?lang=pt" target="_blank">Twitter</a></p>
+    
+    </footer> <!--Final do rodapé -->  
