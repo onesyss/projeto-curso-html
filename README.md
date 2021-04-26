@@ -1,8 +1,5 @@
-# projeto-curso-html
 
-<h1 align="center"> Projeto desenvolvido Por Gustavo Guanabara via Youtube no começo de faculdade
-</h1>
-
+# Maratona de HTML E CSS estudado  para iniciação em programação Front-end.
 
 ## Descrição do Projeto
 <p align="justify"> Informativo sobre o Google Glass, óculos de interação
